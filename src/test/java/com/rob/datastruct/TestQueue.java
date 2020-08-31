@@ -13,6 +13,10 @@ public class TestQueue {
         System.out.println(queue.peek());
 
 
+        queue.remove();
+
+        System.out.println(queue);
+
 
     }
 

@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="algos_and_data_structs" target="1.5" />
+      <module name="algos_and_data_structs" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
