@@ -9,17 +9,17 @@ public class TestBinaryTree {
     private BinaryTree tree;
 
     private void addNodes(BinaryNode node, int i) {
-        BinaryNode left = new BinaryNode("left "+ i);
+        BinaryNode left = new BinaryNode(i);
         node.setLeft(left);
 
-        BinaryNode right = new BinaryNode("right "+ i);
+        BinaryNode right = new BinaryNode (i);
         node.setRight(right);
 
     }
 
     @Before
     public void createTestTree() {
-        BinaryNode root = new BinaryNode("Root");
+        BinaryNode root = new BinaryNode(0);
         tree = new BinaryTree(root);
 
         BinaryNode current = root;

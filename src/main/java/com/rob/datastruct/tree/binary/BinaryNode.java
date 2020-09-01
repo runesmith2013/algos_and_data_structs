@@ -2,24 +2,21 @@ package com.rob.datastruct.tree.binary;
 
 public class BinaryNode {
 
-    private String name;
+    protected int value;
 
     private BinaryNode left;
     private BinaryNode right;
 
 
-    public BinaryNode(String name) {
-        this.name = name;
+    public BinaryNode(int value) {
+        this.value = value;
     }
 
 
-    public String getName() {
-        return name;
+    public int getValue() {
+        return value;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public BinaryNode getLeft() {
         return left;

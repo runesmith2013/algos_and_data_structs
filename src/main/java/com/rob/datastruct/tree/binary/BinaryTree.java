@@ -1,30 +1,16 @@
 package com.rob.datastruct.tree.binary;
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Binary tree - each node has at most two children
  *
- * Binary Search Tree - all left descendents are less than node and all right descendents are greater
- *
- * valid bst:
- *         8
- *       /  \
- *      4    10
- *    /  \    \
- *   2   6    20
- *
- *  invalid bst:
- *        8
- *      /  \
- *    4     10
- *   / \      \
- *  2  12
- *
- *
  */
-public class BinaryTree {
+public class BinaryTree  {
 
-    private BinaryNode root;
+    protected BinaryNode root;
 
 
     public BinaryTree(BinaryNode root) {
@@ -35,6 +21,9 @@ public class BinaryTree {
     public BinaryNode getRoot() {
         return root;
     }
+
+
+
 
 
     /**
@@ -75,9 +64,38 @@ public class BinaryTree {
     }
 
 
+    /**
+     * select a node and explore all children fully before going down the branch
+     *
+     * useful if finding the shortest path between two nodes (dijkstra)
+     *
+     * an interative solution using a queue works best
+     */
+    public void breadthFirstSearch() {
+        if (root == null) {
+            return;
+        }
+
+        Queue<BinaryNode> nodes = new LinkedList<>();
+        nodes.add(root);
+
+        while (!nodes.isEmpty()) {
+            BinaryNode r = nodes.remove(); //-- remove from front of the queue
+            visit (r);
+
+            if(r.getLeft() != null) {
+                nodes.add(r.getLeft());
+            }
+            if (r.getRight() != null) {
+                nodes.add(r.getRight());
+            }
+        }
+
+    }
+
 
     public void visit(BinaryNode node) {
-        System.out.println(node.getName());
+        System.out.println(node.getValue());
     }
 
 
