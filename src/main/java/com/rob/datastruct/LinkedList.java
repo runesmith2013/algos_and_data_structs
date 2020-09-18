@@ -1,6 +1,6 @@
 package com.rob.datastruct;
 
-public class LinkedList {
+public class LinkedList<T> {
 
     private Node head;
 
@@ -10,11 +10,18 @@ public class LinkedList {
 
     }
 
+    public LinkedList(T data) {
+        this.head = new Node(data);
+
+    }
+
+
+
     public Node getHead() {
         return head;
     }
 
-    public void appendToTail(int data) {
+    public void appendToTail(T data) {
         head.appendToTail(data);
     }
 
@@ -22,11 +29,11 @@ public class LinkedList {
         head.print();
     }
 
-    public void deleteNode(int data) {
+    public void deleteNode(T data) {
 
         Node n = head;
 
-        if (n.data == data) {
+        if (n.data.equals(data)) {
             head = head.next;
             return;
         }

@@ -8,7 +8,7 @@ public class TestLinkedList {
     @Test
     public void testLinkedList() {
         Node head = new Node(0);
-        LinkedList list = new LinkedList(head);
+        LinkedList<Integer> list = new LinkedList(head);
 
         list.appendToTail(1);
         list.appendToTail(100);

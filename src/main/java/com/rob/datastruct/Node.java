@@ -1,16 +1,20 @@
 package com.rob.datastruct;
 
 
-public class Node {
+public class Node <T>{
 
     public Node next = null;
-    int data;
+    T data;
 
-    public Node(int d) {
+    public Node(T d) {
         this.data = d;
     }
 
-    public void appendToTail(int d) {
+    public T getData() {
+        return data;
+    }
+
+    public void appendToTail(T d) {
         Node end = new Node (d);
         Node n = this;
 

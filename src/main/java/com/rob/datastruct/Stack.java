@@ -4,6 +4,8 @@ import java.util.EmptyStackException;
 
 public class Stack<T> {
 
+    private int size;
+
     private static class StackNode<T> {
 
         private T data;
@@ -22,6 +24,7 @@ public class Stack<T> {
         T item = top.data;
 
         top = top.next;
+        size --;
         return item;
     }
 
@@ -30,15 +33,20 @@ public class Stack<T> {
         StackNode<T> t = new StackNode<T>(item);
         t.next = top;
         top = t;
+        size ++;
     }
 
     public T peek() {
-        if (top == null) throw new EmptyStackException();
+        if (top == null) return null;
         return top.data;
     }
 
     public boolean isEmpty() {
         return top == null;
+    }
+
+    public int size() {
+        return size;
     }
 
 }
